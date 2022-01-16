@@ -9,9 +9,21 @@ public class BowlingTest {
     @Test
     void gutterBallShouldReturnScoreZero() {
         Game game = new Game();
+
         game.roll(0);
         int result = game.score();
+
         assertEquals(0, result);
+    }
+
+    @Test
+    void singlePinKnockedShouldGiveScoreOne() {
+        Game game = new Game();
+
+        game.roll(1);
+        int result = game.score();
+
+        assertEquals(1, result);
     }
 
 }

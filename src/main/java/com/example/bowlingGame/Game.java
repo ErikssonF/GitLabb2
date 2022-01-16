@@ -3,12 +3,13 @@ package com.example.bowlingGame;
 public class Game {
 
 
-    public void roll(int i) {
+    private int score;
 
+    public void roll(int knockedPins) {
+        score += knockedPins;
     }
 
     public int score() {
-
-        return 0;
+        return score;
     }
 }
