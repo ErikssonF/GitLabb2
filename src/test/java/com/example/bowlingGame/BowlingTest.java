@@ -1,5 +1,6 @@
 package com.example.bowlingGame;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,9 +39,18 @@ public class BowlingTest {
         assertEquals(5, result);
 
 
-
-
-
     }
+
+    @Test
+    void scoreShouldReturnSumOfEntireGame(){
+        Game game = new Game();
+
+        game.fullSeries(20, 10);
+        int result = game.score();
+
+        assertEquals(20, result);
+    }
+
+   
 
 }
