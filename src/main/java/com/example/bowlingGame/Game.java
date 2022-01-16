@@ -2,7 +2,6 @@ package com.example.bowlingGame;
 
 public class Game {
 
-
     private int score;
 
     public void roll(int knockedPins) {
