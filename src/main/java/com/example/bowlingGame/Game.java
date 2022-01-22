@@ -2,15 +2,21 @@ package com.example.bowlingGame;
 
 public class Game {
 
-    private int score;
+    int[] rolls = new int[21];
+    private int score = 0;
 
     public void roll(int knockedPins) {
 
-        score += knockedPins;
+        rolls[score] += knockedPins;
 
     }
 
     public int score() {
+
+        for (int i = 0; i < rolls.length; i++) {
+            if (rolls[i] == 10)
+                strikeScore(rolls[i + 1], rolls[i + 2]);
+        }
         return score;
     }
 
@@ -19,4 +25,15 @@ public class Game {
             score += knockedPins;
         }
     }
-}
+
+    public int strikeScore(int pins1, int pins2) {
+
+        int points = 10;
+        int pins = (pins1+pins2)*2;
+
+        return points + pins;
+
+            }
+        }
+
+
