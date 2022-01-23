@@ -51,7 +51,7 @@ class BowlingTest {
         game.fullSeries(20, 10);
         int result = game.score();
 
-        assertEquals(300, result);
+        assertEquals(200, result);
     }
 
     @Test
@@ -62,12 +62,12 @@ class BowlingTest {
         game.roll(3);
         game.roll(5);
 
-        assertEquals(game.score(), game.strikeScore(3,5));
+        assertEquals(game.score(), game.strikeScore(3, 5));
 
     }
 
     @Test
-    void scoringASpareShouldReturnSumOfSparePlusNextRoll(){
+    void scoringASpareShouldReturnSumOfSparePlusNextRoll() {
 
         game.roll(5);
         game.roll(5);
