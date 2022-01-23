@@ -1,6 +1,6 @@
 package com.example.bowlingGame;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ class BowlingTest {
 
     Game game;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         game = new Game();
     }
