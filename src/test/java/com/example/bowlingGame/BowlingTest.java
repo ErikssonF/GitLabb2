@@ -1,5 +1,6 @@
 package com.example.bowlingGame;
 
+import org.junit.Before;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,9 +8,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BowlingTest {
 
+    Game game;
+
+    @Before
+    public void setUp() {
+        game = new Game();
+    }
+
+
     @Test
     void gutterBallShouldReturnScoreZero() {
-        Game game = new Game();
 
         game.roll(0);
         int result = game.score();
@@ -19,7 +27,6 @@ class BowlingTest {
 
     @Test
     void singlePinKnockedShouldGiveScoreOne() {
-        Game game = new Game();
 
         game.roll(1);
         int result = game.score();
@@ -29,8 +36,6 @@ class BowlingTest {
 
     @Test
     void scoreShouldReturnSumOfTwoRolls() {
-
-        Game game = new Game();
 
         game.roll(2);
         game.roll(3);
@@ -42,7 +47,6 @@ class BowlingTest {
 
     @Test
     void scoreShouldReturnSumOfEntireGame() {
-        Game game = new Game();
 
         game.fullSeries(20, 10);
         int result = game.score();
@@ -53,8 +57,6 @@ class BowlingTest {
     @Test
     @DisplayName("Strike is worth 10 points, plus points for the next 2 rolls")
     void scoringAStrikeShouldReturnSumOfStrikePlusNextTwoRolls() {
-
-        Game game = new Game();
 
         game.roll(10);
         game.roll(3);
@@ -67,8 +69,6 @@ class BowlingTest {
 
     @Test
     void scoringASpareShouldReturnSumOfSparePlusNextRoll(){
-
-        Game game = new Game();
 
         game.roll(5);
         game.roll(5);
