@@ -62,7 +62,7 @@ class BowlingTest {
         game.roll(3);
         game.roll(5);
 
-        assertEquals(game.score(), game.strikeScore(3, 5));
+        assertEquals(26, game.score());
 
     }
 
@@ -73,7 +73,7 @@ class BowlingTest {
         game.roll(5);
         game.roll(3);
 
-        assertEquals(game.score(), game.spareScore(3));
+        assertEquals(16, game.score());
 
     }
 
