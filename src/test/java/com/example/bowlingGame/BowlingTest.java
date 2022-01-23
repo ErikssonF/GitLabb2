@@ -65,4 +65,16 @@ class BowlingTest {
 
     }
 
+    @Test
+    void scoringASpareShouldReturnSumOfSparePlusNextRoll(){
+
+        Game game = new Game();
+
+        game.roll(5);
+        game.roll(5);
+        game.roll(3);
+
+        assertEquals(16,game.spareScore(3));
+    }
+
 }
