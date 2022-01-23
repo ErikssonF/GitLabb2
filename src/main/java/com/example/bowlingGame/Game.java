@@ -7,7 +7,7 @@ public class Game {
 
     public void roll(int knockedPins) {
 
-        rolls[score] += knockedPins;
+        rolls[score++] += knockedPins;
 
     }
 
@@ -15,10 +15,10 @@ public class Game {
 
         for (int i = 0; i < rolls.length; i++) {
             if (rolls[i] == 10) {
-                strikeScore(rolls[i + 1], rolls[i + 2]);
+                score = strikeScore(rolls[i + 1], rolls[i + 2]);
             }
-            else if (rolls[i-1] + rolls[i] == 10){
-                spareScore(rolls[i]);
+            else if (rolls[i]+ rolls[i-1] == 10){
+                score = spareScore(rolls[i+1]);
             }
         }
 
