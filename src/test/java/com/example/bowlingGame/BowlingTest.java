@@ -60,8 +60,6 @@ class BowlingTest {
         game.roll(3);
         game.roll(5);
 
-        int result = game.score();
-
         assertEquals(26, game.strikeScore(3,5));
 
 
