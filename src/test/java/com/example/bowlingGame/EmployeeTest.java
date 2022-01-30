@@ -25,4 +25,13 @@ class EmployeeTest {
 
     }
 
+    @Test
+    void setSalaryShouldReplaceCurrentSalary(){
+
+        employee.setSalary(75);
+
+        assertEquals(75, employee.getSalary());
+
+    }
+
 }
