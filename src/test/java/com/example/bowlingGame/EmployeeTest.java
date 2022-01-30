@@ -16,6 +16,12 @@ class EmployeeTest {
 
         assertEquals("Jagge", employee.getId());
 
+    }
+
+    @Test
+    void getIdShouldReturnCurrentId(){
+
+    assertEquals("Frege", employee.getId());
 
     }
 

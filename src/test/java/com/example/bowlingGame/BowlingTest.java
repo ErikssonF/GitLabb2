@@ -15,7 +15,6 @@ class BowlingTest {
         game = new Game();
     }
 
-
     @Test
     void gutterBallShouldReturnScoreZero() {
 
