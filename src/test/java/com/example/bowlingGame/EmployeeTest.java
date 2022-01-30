@@ -34,4 +34,12 @@ class EmployeeTest {
 
     }
 
+    @Test
+    void getSalaryShouldReturnSalary(){
+
+        assertEquals(50, employee.getSalary());
+    }
+
+
+
 }
