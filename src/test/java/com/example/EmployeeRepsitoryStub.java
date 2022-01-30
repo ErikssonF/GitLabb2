@@ -13,7 +13,7 @@ public class EmployeeRepsitoryStub implements EmployeeRepository {
 
     @Override
     public List<Employee> findAll() {
-        return null;
+        return employees;
     }
 
     @Override
