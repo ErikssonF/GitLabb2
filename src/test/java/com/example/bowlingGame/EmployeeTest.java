@@ -40,6 +40,10 @@ class EmployeeTest {
         assertEquals(50, employee.getSalary());
     }
 
+    @Test
+    void toStringShouldReturnEmployeeInAString(){
 
+        assertEquals(employee.toString(),"Employee [id=Frege, salary=" + 50.0 + "]" );
 
+    }
 }
