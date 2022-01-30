@@ -22,4 +22,13 @@ class EmployeeRepositoryMemoryTest {
 
         assertEquals(3, employeeRepository.findAll().size());
     }
+
+    @Test
+    void addsOneEmployeeSoListShouldGrow(){
+
+        employeeRepository.save(new Employee("Benny",200));
+
+        assertEquals(4, employeeRepository.findAll().size());
+    }
+
 }
