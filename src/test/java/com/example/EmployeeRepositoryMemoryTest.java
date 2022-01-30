@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class EmployeeRepositoryMemoryTest {
 
@@ -29,6 +30,18 @@ class EmployeeRepositoryMemoryTest {
         employeeRepository.save(new Employee("Benny",200));
 
         assertEquals(4, employeeRepository.findAll().size());
+
+    }
+
+    @Test
+    void callingSaveShouldOverwriteCurrentEmployee(){
+
+        var employee = employeeRepository.findAll().get(0);
+
+        var newEmployee = employeeRepository.save(new Employee("Frege", 125));
+
+        assertThat(employees).doesNotContain(employee).contains(newEmployee);
+
     }
 
 }
