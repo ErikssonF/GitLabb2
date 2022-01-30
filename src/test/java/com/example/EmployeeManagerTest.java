@@ -1,7 +1,6 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -30,13 +29,14 @@ class EmployeeManagerTest {
     @Test
     void payEmployeesShouldReturnTrueAfterBeingCalled(){
 
-        employeeManager.payEmployees();
-
         doThrow(new RuntimeException())
                 .when(bankService)
                 .pay(anyString(), anyDouble());
-        assertTrue(employeeRepository.findAll().get(0).isPaid());
 
+        employeeManager.payEmployees();
+
+        assertFalse(employeeRepository.findAll().get(0).isPaid());
+        assertEquals(3, employeeRepository.findAll().size());
 
     }
 

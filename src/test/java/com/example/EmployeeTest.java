@@ -1,4 +1,4 @@
-package com.example.bowlingGame;
+package com.example;
 
 import com.example.Employee;
 import org.junit.jupiter.api.Test;
